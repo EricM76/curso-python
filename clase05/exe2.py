@@ -16,4 +16,14 @@ o simplemente el monto original si no hay descuento.
 """
 
 monto_total = float(input("Ingrese el monto total de la compra: "))
-cantidad_articulos = int(input("Ingrese la cantidad de artículos"))
+cantidad_articulos = int(input("Ingrese la cantidad de artículos: "))
+descuento = 0
+
+if cantidad_articulos > 5 and monto_total > 10000 :
+    descuento = 15 * monto_total / 100
+    monto_total = monto_total - descuento
+elif cantidad_articulos < 5 and cantidad_articulos >= 3:
+    descuento = 10 * monto_total / 100
+    monto_total = monto_total - descuento
+
+print(f"Total a pagar: {monto_total}")
